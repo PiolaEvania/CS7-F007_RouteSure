@@ -83,7 +83,7 @@ const Login = ({ setUser }) => {
                 <a href='/forgotPassword' className='text-lightGray hover:underline'>Forgot password?</a>
               </div>
               <div className='pt-2'>
-                <button type='submit' className='flex w-full justify-center rounded-md bg-greenA px-3 py-1.5 text-sm/6 font-bold text-lightGray shadow-sm hover:bg-darkGreen focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkGreen transition duration-150 ease-in-out' onClick={submitUserData}><img src='https://img.icons8.com/?size=25&id=83887&format=png&color=D9D9D9' className='mr-2'/>Login</button>
+                <button type='submit' className='flex w-full justify-center rounded-md bg-greenA px-3 py-1.5 text-sm/6 font-bold text-lightGray shadow-sm hover:bg-darkGreen focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkGreen transition duration-150 ease-in-out' onClick={submitUserData}><img src='https://img.icons8.com/?size=25&id=83887&format=png&color=D9D9D9' className='mr-2' alt='Log in'/>Login</button>
               </div>
               <div className='justify-center text-center mt-2'>
                 <a href='/register' className='text-lightGray hover:underline'>Don't have an account? Register</a>

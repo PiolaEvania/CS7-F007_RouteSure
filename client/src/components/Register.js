@@ -62,7 +62,7 @@ const Register = () => {
             <div>
               <label htmlFor="name" className="block text-sm/6 font-medium text-lightGray mt-2">Username</label>
               <div className="relative mt-2">
-                <input type="name" name="name" id="name" placeholder='Username' required className="block w-full rounded-md bg-lightGray px-3 py-1 pr-10 text-base text-darkCharcoal outline outline-1 -outline-offset-1 outline-gray-900 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-gray-900 sm:text-sm/6" onChange={(e) => setUserData((prevState) => ({ ...prevState, name: e.target.value }))}/><img src="https://img.icons8.com/?size=25&id=83190&format=png&color=2B3741" alt="Password Icon" className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"/>
+                <input type="name" name="name" id="name" placeholder='Username' required className="block w-full rounded-md bg-lightGray px-3 py-1 pr-10 text-base text-darkCharcoal outline outline-1 -outline-offset-1 outline-gray-900 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-gray-900 sm:text-sm/6" onChange={(e) => setUserData((prevState) => ({ ...prevState, name: e.target.value }))}/><img src="https://img.icons8.com/?size=25&id=83190&format=png&color=2B3741" alt="User Icon" className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"/>
               </div>
             </div>
             <div>
@@ -81,7 +81,7 @@ const Register = () => {
               <a href='/login' className='text-lightGray hover:underline'>Already have an account? Login</a>
             </div>
             <div className='pt-4'>
-              <button type="submit" className="flex w-full justify-center rounded-md bg-greenA px-3 py-1.5 text-sm/6 font-bold text-lightGray shadow-sm hover:bg-darkGreen focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkGreen transition duration-150 ease-in-out" onClick={submitUserData}><img src='https://img.icons8.com/?size=25&id=85484&format=png&color=D9D9D9' className='mr-2'/>Register</button>
+              <button type="submit" className="flex w-full justify-center rounded-md bg-greenA px-3 py-1.5 text-sm/6 font-bold text-lightGray shadow-sm hover:bg-darkGreen focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkGreen transition duration-150 ease-in-out" onClick={submitUserData}><img src='https://img.icons8.com/?size=25&id=85484&format=png&color=D9D9D9' className='mr-2' alt='Register'/>Register</button>
             </div>
           </form>
         </div>

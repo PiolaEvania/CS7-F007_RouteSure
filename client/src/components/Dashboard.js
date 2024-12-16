@@ -49,24 +49,24 @@ const Dashboard = () => {
     <div className="flex">
       <aside className="sidebar w-64 bg-darkCharcoal text-lightGray min-h-screen flex flex-col justify-between p-4">
         <nav className="flex flex-col space-y-4">
-          <button onClick={handleHomeButton} className='transition duration-150 ease-in-out'><img src='https://img.icons8.com/?size=50&id=84102&format=png&color=D9D9D9' className='hover:bg-blueA hover: rounded-md'></img></button>
+          <button onClick={handleHomeButton} className='transition duration-150 ease-in-out'><img src='https://img.icons8.com/?size=50&id=84102&format=png&color=D9D9D9' className='hover:bg-blueA hover: rounded-md' alt='Home'></img></button>
           <button
             className={`items-center flex flex-row p-2 rounded-md text-left font-bold transition duration-150 ease-in-out ${showContent === 'laporan' ? 'bg-darkBlue text-lightGray' : 'hover:bg-blueA'}`}
             onClick={() => setShowContent('laporan')}
-          ><img src='https://img.icons8.com/?size=35&id=102914&format=png&color=D9D9D9' className='mr-2'/>Data Laporan</button>
+          ><img src='https://img.icons8.com/?size=35&id=102914&format=png&color=D9D9D9' className='mr-2' alt='Laporan File'/>Data Laporan</button>
           <button
             className={`items-center flex flex-row p-2 rounded-md text-left font-bold transition duration-150 ease-in-out ${showContent === 'user' ? 'bg-darkBlue text-lightGray' : 'hover:bg-blueA'}`}
             onClick={() => setShowContent('user')}
-          ><img src='https://img.icons8.com/?size=35&id=120859&format=png&color=D9D9D9' className='mr-2'/>Data User</button>
+          ><img src='https://img.icons8.com/?size=35&id=120859&format=png&color=D9D9D9' className='mr-2' alt='User File'/>Data User</button>
           <button
             className={`items-center flex flex-row p-2 rounded-md text-left font-bold transition duration-150 ease-in-out ${showContent === 'map' ? 'bg-darkBlue text-lightGray' : 'hover:bg-blueA'}`}
-            onClick={() => setShowContent('map')}><img src='https://img.icons8.com/?size=35&id=85961&format=png&color=D9D9D9' className='mr-2'/>Map</button>
+            onClick={() => setShowContent('map')}><img src='https://img.icons8.com/?size=35&id=85961&format=png&color=D9D9D9' className='mr-2' alt='Maps'/>Map</button>
         </nav>
         <div>
           <button
             className="align-bottom items-center flex flex-row p-2 mb-2 rounded-md text-left font-bold bg-red-500 hover:bg-red-400 text-lightGray w-full transition duration-150 ease-in-out"
             onClick={handleLogoutButton}
-          ><img src='https://img.icons8.com/?size=35&id=105512&format=png&color=D9D9D9' className='mr-2'></img>Logout</button>
+          ><img src='https://img.icons8.com/?size=35&id=105512&format=png&color=D9D9D9' className='mr-2' alt='Log Out'></img>Logout</button>
         </div>
       </aside>
 

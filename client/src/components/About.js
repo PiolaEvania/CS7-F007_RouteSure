@@ -24,7 +24,7 @@ const About = () => {
               />
             </div>
             <h3 className="text-base sm:text-lg font-semibold">
-              <a href="https://www.linkedin.com/in/febrio-dwi-setiawan-7a634329b" className='flex flex-row'>Febrio Dwi Setiawan<img src='https://img.icons8.com/?size=25&id=85141&format=png&color=2B3741' className='ml-1 hover:bg-blue-300'></img>
+              <a href="https://www.linkedin.com/in/febrio-dwi-setiawan-7a634329b" className='flex flex-row'>Febrio Dwi Setiawan<img src='https://img.icons8.com/?size=25&id=85141&format=png&color=2B3741' alt="LinkedIn" className='ml-1 hover:bg-blue-300'></img>
               </a>
             </h3>
             <p className="text-sm text-gray-600">Founder</p>
@@ -39,7 +39,7 @@ const About = () => {
               />
             </div>
             <h3 className="text-base sm:text-lg font-semibold">
-              <a href="https://www.linkedin.com/in/piola-evania" className='flex flex-row'>Piola Evania<img src='https://img.icons8.com/?size=25&id=85141&format=png&color=2B3741' className='ml-1 hover:bg-blue-300'></img></a>
+              <a href="https://www.linkedin.com/in/piola-evania" className='flex flex-row'>Piola Evania<img src='https://img.icons8.com/?size=25&id=85141&format=png&color=2B3741' className='ml-1 hover:bg-blue-300' alt="LinkedIn"></img></a>
             </h3>
             <p className="text-sm text-gray-600">Co-Founder</p>
           </div>
@@ -53,7 +53,7 @@ const About = () => {
               />
             </div>
             <h3 className="text-base sm:text-lg font-semibold">
-              <a href="https://www.linkedin.com/in/dhea-aprilinda-utami" className='flex flex-row'>Dhea Aprilinda Utami<img src='https://img.icons8.com/?size=25&id=85141&format=png&color=2B3741' className='ml-1 hover:bg-blue-300'></img></a>
+              <a href="https://www.linkedin.com/in/dhea-aprilinda-utami" className='flex flex-row'>Dhea Aprilinda Utami<img src='https://img.icons8.com/?size=25&id=85141&format=png&color=2B3741' className='ml-1 hover:bg-blue-300' alt="LinkedIn"></img></a>
             </h3>
             <p className="text-sm text-gray-600">Developer</p>
           </div>
@@ -67,7 +67,7 @@ const About = () => {
               />
             </div>
             <h3 className="text-base sm:text-lg font-semibold">
-              <a href="https://www.linkedin.com/in/diannurrahmah" className='flex flex-row'>Dian Nur Rahmah <img src='https://img.icons8.com/?size=25&id=85141&format=png&color=2B3741' className='ml-1 hover:bg-blue-300'></img></a>
+              <a href="https://www.linkedin.com/in/diannurrahmah" className='flex flex-row'>Dian Nur Rahmah <img src='https://img.icons8.com/?size=25&id=85141&format=png&color=2B3741' className='ml-1 hover:bg-blue-300' alt="LinkedIn"></img></a>
             </h3>
             <p className="text-sm text-gray-600">Project Manager</p>
           </div>

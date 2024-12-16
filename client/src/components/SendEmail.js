@@ -63,7 +63,7 @@ const SendEmail = () => {
   return (
     <div>
       <header className='bg-darkCharcoal p-6 flex flex-row items-center'>
-        <button onClick={handleDashboardButton} className='transition duration-150 ease-in-out'><img src='https://img.icons8.com/?size=50&id=Yj5svDsC4jQA&format=png&color=D9D9D9' className='hover:bg-blueA hover:rounded-md'></img></button>
+        <button onClick={handleDashboardButton} className='transition duration-150 ease-in-out'><img src='https://img.icons8.com/?size=50&id=Yj5svDsC4jQA&format=png&color=D9D9D9' className='hover:bg-blueA hover:rounded-md' alt='Dashboard'></img></button>
         <h1 className='flex-1 text-lightGray text-center text-3xl font-bold'>Kirim Status Laporan</h1>
       </header>
       <section className="p-5">

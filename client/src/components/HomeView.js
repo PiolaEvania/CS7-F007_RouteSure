@@ -104,7 +104,7 @@ const HomeView = () => {
       <header className="flex flex-1 bg-darkCharcoal p-6 justify-center items-center sticky bottom-0">
         {userRole === '671b672b3981db347cfd7832' && (
           <button onClick={handleDashboardButton} className='transition duration-150 ease-in-out'>
-            <img src='https://img.icons8.com/?size=50&id=Yj5svDsC4jQA&format=png&color=D9D9D9' className='mr-2 hover:bg-blueA hover:rounded-md' />
+            <img src='https://img.icons8.com/?size=50&id=Yj5svDsC4jQA&format=png&color=D9D9D9' className='mr-2 hover:bg-blueA hover:rounded-md' alt='Dashboard'/>
           </button>
         )}
         <div className='flex flex-1'>
@@ -126,7 +126,7 @@ const HomeView = () => {
             </li>
           </ul>
           <button onClick={handleLogoutButton} type='submit' className='transition duration-150 ease-in-out'>
-            <img src='https://img.icons8.com/?size=50&id=105512&format=png&color=D9D9D9' className='hover:bg-red-500 hover:rounded-md ml-2' />
+            <img src='https://img.icons8.com/?size=50&id=105512&format=png&color=D9D9D9' className='hover:bg-red-500 hover:rounded-md ml-2' alt='Log Out'/>
           </button>
         </nav>
       </header>
@@ -207,7 +207,7 @@ const HomeView = () => {
                     <button
                       className="inline-flex w-full items-center justify-center rounded-md bg-darkCharcoal px-3.5 py-2.5 font-bold leading-7 text-lightGray hover:bg-slate-900 transition duration-150 ease-in-out"
                       type="submit"
-                      onClick={submitDataLaporan}><img src='https://img.icons8.com/?size=35&id=85971&format=png&color=D9D9D9' className='mr-2'/>
+                      onClick={submitDataLaporan}><img src='https://img.icons8.com/?size=35&id=85971&format=png&color=D9D9D9' alt='Kirim' className='mr-2'/>
                       Submit
                     </button>
                   </div>
