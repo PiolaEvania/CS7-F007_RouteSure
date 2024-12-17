@@ -57,8 +57,12 @@ const TableLaporan = () => {
 
   const sortByStatusHandle = (e) => {
     const targetStatus = e.target.value;
-    const filterLaporan = laporanUser.filter((laporan) => laporan.status === targetStatus);
-    setFilteredLaporan(filterLaporan);
+    if (targetStatus === 'Semua') {
+      setFilteredLaporan(laporanUser);
+    } else {
+      const filterLaporan = laporanUser.filter((laporan) => laporan.status === targetStatus);
+      setFilteredLaporan(filterLaporan);
+    }
   };
 
   return (
@@ -80,6 +84,7 @@ const TableLaporan = () => {
                   onChange={sortByStatusHandle}
                   name="filter"
                 >
+                  <option value="Semua">Semua</option>
                   <option value="Proses">Proses</option>
                   <option value="Selesai">Selesai</option>
                   <option value="Ditolak">Ditolak</option>
@@ -98,7 +103,7 @@ const TableLaporan = () => {
               <td className="px-4 py-2 break-words">{laporan.position.longitude}</td>
               <td className="px-4 py-2 break-words">{laporan.deskripsi}</td>
               <td className="px-4 py-2">
-                <img className="w-20 h-20 object-cover rounded" src={laporan.image} alt=''/>
+                <img className="w-20 h-20 object-cover rounded" src={laporan.image} alt='' />
               </td>
               <td className="px-11 py-2 items-center">
                 <span

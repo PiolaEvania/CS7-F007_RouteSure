@@ -7,6 +7,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import DashboardCount from './DashboardCount';
 
 const Dashboard = () => {
   const [showContent, setShowContent] = useState('laporan');
@@ -78,8 +79,13 @@ const Dashboard = () => {
           {showContent === 'laporan' && <TableLaporan />}
           {showContent === 'user' && <TableUser />}
           {showContent === 'map' && (
-            <div className="w-full h-[700px]">
-              <Map />
+            <div>
+              <div className="w-full h-[450px]">
+                <Map />
+              </div>
+              <div className='mt-4'>
+                <DashboardCount/>
+              </div>
             </div>
           )}
         </main>
