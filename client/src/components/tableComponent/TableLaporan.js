@@ -57,7 +57,7 @@ const TableLaporan = () => {
 
   const sortByStatusHandle = (e) => {
     const targetStatus = e.target.value;
-    if (targetStatus === 'Semua') {
+    if (targetStatus === 'Status') {
       setFilteredLaporan(laporanUser);
     } else {
       const filterLaporan = laporanUser.filter((laporan) => laporan.status === targetStatus);
@@ -75,21 +75,14 @@ const TableLaporan = () => {
             <th className="px-4 py-3">Latitude</th>
             <th className="px-4 py-3">Longitude</th>
             <th className="px-4 py-3">Description</th>
-            <th className="px-4 py-3">Picture</th>
+            <th className="px-4 py-3 text-center">Picture</th>
             <th className="px-4 py-3">
-              <div className="flex items-center">
-                Status
-                <select
-                  className="ml-2 border bg-transparent border-gray-700 text-gray-700 rounded"
-                  onChange={sortByStatusHandle}
-                  name="filter"
-                >
-                  <option value="Semua">Semua</option>
-                  <option value="Proses">Proses</option>
-                  <option value="Selesai">Selesai</option>
-                  <option value="Ditolak">Ditolak</option>
-                </select>
-              </div>
+              <select className="ml-4 border-none bg-transparent border-gray-700 text-gray-700 uppercase text-center justify-center items-center" onChange={sortByStatusHandle} name="filter">
+                <option value="Status">Status</option>
+                <option value="Proses">Proses</option>
+                <option value="Selesai">Selesai</option>
+                <option value="Ditolak">Ditolak</option>
+              </select>
             </th>
             <th className="px-4 py-3 text-center">Action</th>
           </tr>
@@ -103,7 +96,7 @@ const TableLaporan = () => {
               <td className="px-4 py-2 break-words">{laporan.position.longitude}</td>
               <td className="px-4 py-2 break-words">{laporan.deskripsi}</td>
               <td className="px-4 py-2">
-                <img className="w-20 h-20 object-cover rounded" src={laporan.image} alt='' />
+                <img className="w-40 h-20 object-cover rounded" src={laporan.image} alt='' />
               </td>
               <td className="px-11 py-2 items-center">
                 <span
