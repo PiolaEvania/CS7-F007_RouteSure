@@ -40,9 +40,9 @@ const EditLaporan = () => {
 
   return (
     <div>
-      <header className='bg-darkCharcoal p-6 flex flex-row items-center'>
+      <header className='bg-darkCharcoal p-6 flex flex-row items-center justify-center'>
         <button onClick={handleDashboardButton} className='transition duration-150 ease-in-out'><img src='https://img.icons8.com/?size=50&id=Yj5svDsC4jQA&format=png&color=D9D9D9' className='hover:bg-blueA hover:rounded-md' alt='Dashboard'></img></button>
-        <h1 className='flex-1 text-lightGray text-center text-3xl font-bold'>Edit Laporan</h1>
+        <h1 className='flex-1 text-white text-center text-3xl font-bold'>Edit Laporan</h1>
       </header>
       <section className="p-5">
         <div className="flex items-center justify-center my-3">
@@ -82,7 +82,7 @@ const EditLaporan = () => {
                   </select>
                 </div>
                 <div>
-                  <button className="inline-flex w-full items-center justify-center rounded-md bg-darkCharcoal px-3.5 py-2.5 font-bold leading-7 text-lightGray hover:bg-slate-900 transition duration-150 ease-in-out" type="submit">Edit</button>
+                  <button className="inline-flex w-full items-center justify-center rounded-md bg-darkCharcoal px-3.5 py-2.5 font-bold leading-7 text-white hover:bg-slate-900 transition duration-150 ease-in-out" type="submit">Edit</button>
                 </div>
               </div>
             </form>

@@ -33,7 +33,7 @@ const Weather = () => {
     }
   };
 
-  if (loading) return <div className='ml-2 text-lightGray'>Loading cuaca...</div>;
+  if (loading) return <div className='ml-2 text-white'>Loading cuaca...</div>;
 
   if (!weatherData) return <div>Cuaca tidak tersedia.</div>;
 
@@ -41,7 +41,7 @@ const Weather = () => {
   const weatherIcon = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
 
   return (
-    <div className="flex items-center space-x-4 text-lightGray flex-wrap">
+    <div className="flex items-center space-x-4 text-white flex-wrap">
       <img
         src={weatherIcon}
         alt={weather[0].description}

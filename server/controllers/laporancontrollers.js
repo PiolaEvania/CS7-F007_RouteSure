@@ -48,7 +48,7 @@ exports.createLaporan = async (req, res) => {
       image: imageUrl
     }); return res.status(200).json({
       status: 'success',
-      message: 'Terima Kasih atas pelaporan yang anda berikan laporan anda sedang dalam proses.', data: laporan
+      message: 'Terima kasih atas laporan Anda. Laporan Anda sedang dalam proses.', data: laporan
     });
   } catch (error) {
     if (error.code === 11000) {

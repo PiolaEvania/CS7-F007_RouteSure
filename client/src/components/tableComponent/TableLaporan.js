@@ -66,7 +66,7 @@ const TableLaporan = () => {
   };
 
   return (
-    <div className="overflow-x-auto px-4">
+    <div className="bg-white overflow-x-auto px-4">
       <table className="items-center table-auto w-full text-sm text-gray-500 divide-y divide-darkCharcoal">
         <thead className="text-xs text-left text-gray-700 uppercase">
           <tr>
