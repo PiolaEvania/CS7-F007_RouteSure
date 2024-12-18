@@ -266,7 +266,6 @@ const HomeView = () => {
           </div>
         </section>
 
-
       </div>
       <section className="rounded-md p-2 bg-white" id='dashboard'>
         <DashboardCount />
