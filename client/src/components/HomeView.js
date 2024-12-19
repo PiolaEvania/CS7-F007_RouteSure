@@ -81,6 +81,8 @@ const HomeView = () => {
       formData.append('deskripsi', deskripsi);
       formData.append('image', image);
 
+      console.log('FormData:', [...formData.entries()]);
+
       axios.post('http://localhost:5000/api/laporan', formData, {
         withCredentials: true,
         headers: {
