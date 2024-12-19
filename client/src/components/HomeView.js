@@ -94,7 +94,8 @@ const HomeView = () => {
           setImage(null);
           setDeskripsi('');
         })
-        .catch(() => {
+        .catch((error) => {
+          console.error(error);
           toast.error('Laporan dengan lokasi ini sudah ada dan sedang diproses.');
         });
     });
