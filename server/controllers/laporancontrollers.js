@@ -19,11 +19,11 @@ exports.getLaporan = async (req, res) => {
 
 exports.createLaporan = async (req, res) => {
   try {
-    const file = req.file; if (!file) {
-      return res.status(400).json({
-        message: 'File image tidak di temukan.'
-      });
+    const file = req.file;
+    if (!file) {
+      return res.status(400).json({ message: 'File image tidak di temukan.' });
     }
+
     const uploadImage = () => {
       return new Promise((resolve, reject) => {
         const stream = cloudinary.uploader.upload_stream({
@@ -39,20 +39,42 @@ exports.createLaporan = async (req, res) => {
         streamifier.createReadStream(req.file.buffer).pipe(stream);
       });
     };
+
     const imageUrl = await uploadImage();
+    const { latitude, longitude } = req.body;
+    const radius = 0.0018; // Radius dalam derajat (sekitar 200 meter)
+
+    const nearbyLaporan = await Laporan.find();
+    const isNearby = nearbyLaporan.some(laporan => {
+      const deltaLat = latitude - laporan.position.latitude;
+      const deltaLon = longitude - laporan.position.longitude;
+      const distance = Math.sqrt(deltaLat * deltaLat + deltaLon * deltaLon);
+      return distance <= radius;
+    });
+
+    if (isNearby) {
+      return res.status(400).json({
+        message: 'Laporan sudah ada dalam radius yang ditentukan.'
+      });
+    }
+
     const laporan = await Laporan.create({
       name: req.body.name,
       email: req.body.email,
-      position: { latitude: req.body.latitude, longitude: req.body.longitude, },
+      position: { latitude, longitude },
       deskripsi: req.body.deskripsi,
       image: imageUrl
-    }); return res.status(200).json({
+    });
+
+    return res.status(200).json({
       status: 'success',
-      message: 'Terima kasih atas laporan Anda. Laporan Anda sedang dalam proses.', data: laporan
+      message: 'Terima Kasih atas laporan Anda. Laporan Anda sedang dalam proses.',
+      data: laporan
     });
   } catch (error) {
     return res.status(500).json({
-      status: 'failed', error: error.stack
+      status: 'failed',
+      error: error.stack
     });
   }
 };

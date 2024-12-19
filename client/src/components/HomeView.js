@@ -71,6 +71,7 @@ const HomeView = () => {
       toast.warn('Form laporan harus diisi!');
       return;
     }
+
     navigator.geolocation.getCurrentPosition((position) => {
       const formData = new FormData();
       formData.append('name', name);
@@ -81,8 +82,6 @@ const HomeView = () => {
       formData.append('deskripsi', deskripsi);
       formData.append('image', image);
 
-      console.log('FormData:', [...formData.entries()]);
-
       axios.post('http://localhost:5000/api/laporan', formData, {
         withCredentials: true,
         headers: {
@@ -90,16 +89,19 @@ const HomeView = () => {
         },
       })
         .then((response) => {
-          toast.success(response.data.message);
-          setName('');
-          setEmail('');
-          setImage(null);
-          setDeskripsi('');
-        })
-        .catch((error) => {
-          console.error(error);
-          toast.error('Laporan dengan lokasi ini sudah ada dan sedang diproses.');
-        });
+        console.log('FormData:', [...formData.entries()]);
+        toast.success(response.data.message);
+        setTimeout(() => {
+          window.location.reload()
+        }, 5000)
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error('Laporan dengan lokasi ini sudah ada dan sedang diproses.');
+      });
+    }, (error) => {
+      console.error(error);
+      toast.error('Gagal mendapatkan lokasi. Pastikan izin lokasi diaktifkan.');
     });
   };
 
