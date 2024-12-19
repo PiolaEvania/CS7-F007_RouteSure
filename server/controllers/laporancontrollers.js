@@ -51,11 +51,6 @@ exports.createLaporan = async (req, res) => {
       message: 'Terima kasih atas laporan Anda. Laporan Anda sedang dalam proses.', data: laporan
     });
   } catch (error) {
-    if (error.code === 11000) {
-      return res.status(400).json({
-        message: 'Laporan dengan lokasi ini sudah ada dan sedang diproses'
-      });
-    }
     return res.status(500).json({
       status: 'failed', error: error.stack
     });
