@@ -1,7 +1,6 @@
 import React from 'react';
 import SendEmail from '../components/SendEmail';
 
-
 const SendEmailPages = () => {
   return (
     <div>
