@@ -15,7 +15,7 @@ const EditLaporan = () => {
   };
 
   useEffect(() => {
-    axios.get(`https://api-route-sure-git-production-route-sure.vercel.app/api/laporan/${ idLaporan }`, { withCredentials: true })
+    axios.get(`https://api-route-sure.vercel.app/api/laporan/${ idLaporan }`, { withCredentials: true })
       .then((response) => {
         setLaporanUser(response.data);
         setStatus(response.data.detailLaporan.status);
@@ -27,7 +27,7 @@ const EditLaporan = () => {
 
   function editLaporanHandle(e) {
     e.preventDefault();
-    axios.put(`https://api-route-sure-git-production-route-sure.vercel.app/api/laporan/${ idLaporan }`, { status: status }, { withCredentials: true })
+    axios.put(`https://api-route-sure.vercel.app/api/laporan/${ idLaporan }`, { status: status }, { withCredentials: true })
       .then((response) => {
         setLaporanUser(response.data);
         console.log(response.data);

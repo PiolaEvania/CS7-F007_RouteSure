@@ -33,7 +33,7 @@ const Dashboard = () => {
         if (result.isConfirmed) {
           const removeUser = localStorage.removeItem('user');
           Cookies.remove('jwt');
-          axios.post('https://api-route-sure-git-production-route-sure.vercel.app/api/logout', removeUser, { withCredentials: true })
+          axios.post('https://api-route-sure.vercel.app/api/logout', removeUser, { withCredentials: true })
             .then(() => {
               console.log('Log Out Berhasil');
               toast.success('Anda telah Log Out');
