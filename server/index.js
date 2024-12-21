@@ -29,7 +29,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
-  origin: 'https://app-route-sure.vercel.app',
+  origin: 'https://route-sure.vercel.app',
   method: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
