@@ -9,7 +9,7 @@ const TableLaporan = () => {
   const [filteredLaporan, setFilteredLaporan] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/laporan', { withCredentials: true })
+    axios.get('https://api-route-sure.vercel.app/api/laporan', { withCredentials: true })
       .then((response) => {
         if (Array.isArray(response.data.data)) {
           const sortedData = response.data.data.sort((a, b) => new Date(b.updatedAt || b.createdAt) - new Date(a.updatedAt || a.createdAt));
@@ -42,7 +42,7 @@ const TableLaporan = () => {
       cancelButtonText: 'Batal',
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/api/laporan/${getId}`, { withCredentials: true })
+        axios.delete(`https://api-route-sure.vercel.app/api/laporan/${getId}`, { withCredentials: true })
           .then(() => {
             console.log(`data-id: ${ getId } berhasil dihapus`);
             toast.success('Data Laporan berhasil dihapus');
