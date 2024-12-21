@@ -7,12 +7,12 @@ const ProtectedRoute = ({ allowedRoles }) => {
   const user = JSON.parse(localStorage.getItem('user'));
 
   if (!user) {
-    toast.warn('Anda harus login terlebih dahulu.');
+    toast.warn('Anda harus login terlebih dahulu');
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   if (!allowedRoles.includes(user.role)) {
-    toast.warn('Anda tidak bisa mengakses halaman ini.');
+    toast.warn('Anda tidak bisa mengakses halaman ini');
     return <Navigate to="/home" state={{ from: location }} replace />;
   }
 

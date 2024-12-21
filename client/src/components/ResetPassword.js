@@ -15,7 +15,7 @@ const ResetPassword = () => {
     const token = url.split('/')[4];
 
     if (password !== confirmPassword) {
-      toast.error('Password dan Confirm Password tidak sama!');
+      toast.warn('Password dan Confirm Password tidak sama!');
       return;
     }
     axios.put(`http://localhost:5000/api/resetPassword/${ token }`,
@@ -30,7 +30,6 @@ const ResetPassword = () => {
         toast.error(error.response.data.message);
       });
   }
-
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-darkCharcoal px-6 py-12 lg:px-8">

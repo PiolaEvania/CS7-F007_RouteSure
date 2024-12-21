@@ -3,7 +3,6 @@ import { Bounce, toast } from 'react-toastify';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-
 const Register = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
@@ -15,7 +14,6 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-
   const toastUtil = {
     position: 'top-left',
     closeOnClick: true,
@@ -26,30 +24,42 @@ const Register = () => {
   async function submitUserData(e) {
     e.preventDefault();
     if (!userData.email || !userData.name || !userData.password || !userData.confirmPassword) {
-      toast.error('Semua field harus diisi!', toastUtil);
+      toast.warn('Semua field harus diisi!', toastUtil);
       return;
     }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(userData.email)) {
+      toast.warn('Format email harus example@gmail.com!', toastUtil);
+      return;
+    }
+
     if (userData.password !== userData.confirmPassword) {
-      toast.error('Password dan Confirm Password tidak sama!', toastUtil);
+      toast.warn('Password dan Confirm Password tidak sama!', toastUtil);
       return;
     }
+
+    if (userData.password.length < 6) {
+      toast.warn('Password minimal 6 karakter!', toastUtil);
+      return;
+    }
+
     try {
       const response = await axios.post('http://localhost:5000/api/register', userData);
       if (response.status === 200) {
-        toast.success(`Akun ${ response.data.message } terdaftar.`, toastUtil);
+        toast.success(`Akun ${ response.data.message } terdaftar`, toastUtil);
         navigate('/login');
       }
-
     }
+
     catch (err) {
-      if (err.response && err.response.status === 400) {
-        toast.error('Error: Email Anda sudah terdaftar.', toastUtil);
-      } else {
-        toast.error('Terjadi kesalahan pada server.', toastUtil);
+      toast.error('Error: Email Anda sudah terdaftar', toastUtil);
+      if (err) {
+        console.error(err.response.data.message);
       }
     }
-
   }
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-darkCharcoal px-6 py-12 lg:px-8">
       <div className="w-full max-w-lg bg-white rounded shadow-md p-6">

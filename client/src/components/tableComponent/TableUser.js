@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
 const TableUser = () => {
   const [DataUser, setDataUser] = useState([]);
   useEffect(() => {
@@ -19,6 +18,7 @@ const TableUser = () => {
         console.log(err);
       });
   }, []);
+
   return (
     <div className='px-5 bg-white'>
       <table className="table-auto w-full text-sm text-left text-gray-500 divide-y divide-darkCharcoal">

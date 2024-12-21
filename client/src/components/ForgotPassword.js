@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
-
 const ForgotPassword = () => {
   const [emailUser, setEmail] = useState('');
 

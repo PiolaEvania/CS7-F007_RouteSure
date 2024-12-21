@@ -2,14 +2,13 @@ import React, { useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
-
 const About = () => {
   useEffect(() => {
     Aos.init({
-      duration: 1000, // Durasi animasi dalam milidetik
-      // Apakah animasi hanya dijalankan sekali
+      duration: 1000,
     });
   }, []);
+
   return (
     <div className="container mx-auto p-6">
       <div className="text-center">

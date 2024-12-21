@@ -12,8 +12,9 @@ const TableLaporan = () => {
     axios.get('http://localhost:5000/api/laporan', { withCredentials: true })
       .then((response) => {
         if (Array.isArray(response.data.data)) {
-          setLaporanUser(response.data.data);
-          setFilteredLaporan(response.data.data); // Initialize filteredLaporan with all data
+          const sortedData = response.data.data.sort((a, b) => new Date(b.updatedAt || b.createdAt) - new Date(a.updatedAt || a.createdAt));
+          setLaporanUser(sortedData);
+          setFilteredLaporan(sortedData);
         } else {
           console.error('API response is not an array:', response.data);
         }
@@ -26,7 +27,7 @@ const TableLaporan = () => {
   const deleteLaporanHandler = (e) => {
     const getId = e.currentTarget.getAttribute('data-id');
     if (!getId) {
-      toast.error('Invalid ID. Unable to delete laporan.');
+      toast.error('ID Invalid. Tidak bisa menghapus laporan');
       return;
     }
 
@@ -37,18 +38,19 @@ const TableLaporan = () => {
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Delete',
-      cancelButtonText: 'Cancel',
+      confirmButtonText: 'Hapus',
+      cancelButtonText: 'Batal',
     }).then((result) => {
       if (result.isConfirmed) {
         axios.delete(`http://localhost:5000/api/laporan/${getId}`, { withCredentials: true })
           .then(() => {
+            console.log(`data-id: ${ getId } berhasil dihapus`);
             toast.success('Data Laporan berhasil dihapus');
             setLaporanUser(laporanUser.filter((laporan) => laporan._id !== getId));
             setFilteredLaporan(filteredLaporan.filter((laporan) => laporan._id !== getId));
           })
           .catch((error) => {
-            toast.error('Kesalahan Server. Coba lagi nanti.');
+            toast.error('Terjadi kesalahan pada server');
             console.error('Delete failed:', error);
           });
       }

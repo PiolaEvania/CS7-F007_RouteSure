@@ -28,8 +28,7 @@ const HomeView = () => {
       setUserRole(user.role);
     }
     AOS.init({
-      duration: 1000, // Durasi animasi dalam milidetik
-      once: true, // Apakah animasi hanya dijalankan sekali
+      duration: 1000,
     });
   }, []);
 
@@ -49,14 +48,15 @@ const HomeView = () => {
         confirmButtonColor: '#d33',
         cancelButtonColor: '#3085d6',
         confirmButtonText: 'Log Out',
-        cancelButtonText: 'Cancel',
+        cancelButtonText: 'Batal',
       }).then((result) => {
         if (result.isConfirmed) {
           const removeUser = localStorage.removeItem('user');
           Cookies.remove('jwt');
           axios.post('http://localhost:5000/api/logout', removeUser, { withCredentials: true })
             .then(() => {
-              toast.success('Logout berhasil.');
+              console.log('Log Out Berhasil');
+              toast.success('Anda telah Log Out');
               navigate('/login');
             })
             .catch((error) => {
@@ -99,16 +99,16 @@ const HomeView = () => {
           console.log('FormData:', [...formData.entries()]);
           toast.success(response.data.message);
           setTimeout(() => {
-            window.location.reload()
-          }, 5000)
+            window.location.reload();
+          }, 5000);
         })
         .catch((error) => {
           console.error(error);
-          toast.error('Laporan dengan lokasi ini sudah ada dan sedang diproses.');
+          toast.error('Laporan dengan lokasi ini sudah ada dan sedang diproses');
         });
     }, (error) => {
       console.error(error);
-      toast.error('Gagal mendapatkan lokasi. Pastikan izin lokasi diaktifkan.');
+      toast.error('Gagal mendapatkan lokasi. Pastikan izin lokasi diaktifkan');
     });
   };
 
