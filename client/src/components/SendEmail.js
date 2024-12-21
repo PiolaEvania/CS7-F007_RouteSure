@@ -17,7 +17,7 @@ const SendEmail = () => {
   };
 
   useEffect(() => {
-    axios.get(`https://api-route-sure.vercel.app/api/laporan/${ idLaporan }`, { withCredentials: true })
+    axios.get(`https://api-route-sure-git-production-route-sure.vercel.app/api/laporan/${ idLaporan }`, { withCredentials: true })
       .then((response) => {
         setLaporanUser(response.data);
         setStatus(response.data.detailLaporan.status);

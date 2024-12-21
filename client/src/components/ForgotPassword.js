@@ -7,7 +7,7 @@ const ForgotPassword = () => {
 
   function checkEmail(e) {
     e.preventDefault();
-    axios.post('https://api-route-sure.vercel.app/api/forgotPassword', {
+    axios.post('https://api-route-sure-git-production-route-sure.vercel.app/api/forgotPassword', {
       email: emailUser
     }).then((response) => {
       console.log(response.data);

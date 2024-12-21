@@ -17,7 +17,7 @@ const DashboardCount = () => {
     const fetchData = () => {
       // Fetch total users
       axios
-        .get('https://api-route-sure.vercel.app/api/get-user', { withCredentials: true })
+        .get('https://api-route-sure-git-production-route-sure.vercel.app/api/get-user', { withCredentials: true })
         .then((response) => {
           if (Array.isArray(response.data.user)) {
             setUserCount(response.data.user.length);
@@ -29,7 +29,7 @@ const DashboardCount = () => {
 
       // Fetch total laporan
       axios
-        .get('https://api-route-sure.vercel.app/api/laporan', { withCredentials: true })
+        .get('https://api-route-sure-git-production-route-sure.vercel.app/api/laporan', { withCredentials: true })
         .then((response) => {
           if (Array.isArray(response.data.data)) {
             setLaporanCount(response.data.data.length);

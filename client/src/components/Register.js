@@ -45,7 +45,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('https://api-route-sure.vercel.app/api/register', userData);
+      const response = await axios.post('https://api-route-sure-git-production-route-sure.vercel.app/api/register', userData);
       if (response.status === 200) {
         toast.success(`Akun ${ response.data.message } terdaftar`, toastUtil);
         navigate('/login');
