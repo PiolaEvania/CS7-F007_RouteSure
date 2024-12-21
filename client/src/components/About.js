@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 
 const About = () => {
+  useEffect(() => {
+    Aos.init({
+      duration: 1000, // Durasi animasi dalam milidetik
+      // Apakah animasi hanya dijalankan sekali
+    });
+  }, []);
   return (
     <div className="container mx-auto p-6">
       <div className="text-center">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4">RouteSure</h1>
-        <p className="text-base sm:text-lg mb-6">
-          RouteSure adalah aplikasi berbasis website sebagai wadah pelaporan kondisi infrastruktur yang bermasalah.
-          Project ini dibuat untuk memenuhi tugas akhir SIB Dicoding Batch 7 Pengembang Front-End dan Back-End.
-        </p>
-      </div>
-
-      <div className="text-center">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-8">Team</h1>
+        <h1 data-aos="fade-up" className="text-3xl sm:text-4xl font-bold mb-8">Tim RouteSure</h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="flex flex-col items-center">
+          <div data-aos="fade-up" className="flex flex-col items-center">
             <div className="w-32 h-32 sm:w-36 sm:h-36 border border-darkCharcoal rounded-full overflow-hidden mb-4">
               <img
                 src="https://images2.imgbox.com/59/2a/440n3W5K_o.jpg"
@@ -30,7 +31,7 @@ const About = () => {
             <p className="text-sm text-gray-600">Founder</p>
           </div>
 
-          <div className="flex flex-col items-center">
+          <div data-aos="fade-up" className="flex flex-col items-center">
             <div className="w-32 h-32 sm:w-36 sm:h-36 border border-darkCharcoal rounded-full overflow-hidden mb-4">
               <img
                 src="https://images2.imgbox.com/20/b4/JHhmdHps_o.jpg"
@@ -44,7 +45,7 @@ const About = () => {
             <p className="text-sm text-gray-600">Co-Founder</p>
           </div>
 
-          <div className="flex flex-col items-center">
+          <div data-aos="fade-up" className="flex flex-col items-center">
             <div className="w-32 h-32 sm:w-36 sm:h-36 border border-darkCharcoal rounded-full overflow-hidden mb-4">
               <img
                 src="https://images2.imgbox.com/62/6c/dOaGpmGd_o.jpg?"
@@ -58,7 +59,7 @@ const About = () => {
             <p className="text-sm text-gray-600">Developer</p>
           </div>
 
-          <div className="flex flex-col items-center">
+          <div data-aos="fade-up" className="flex flex-col items-center">
             <div className="w-32 h-32 sm:w-36 sm:h-36 border border-darkCharcoal rounded-full overflow-hidden mb-4">
               <img
                 src="https://images2.imgbox.com/73/3a/P1sLHtN1_o.jpg"

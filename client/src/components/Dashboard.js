@@ -61,7 +61,7 @@ const Dashboard = () => {
           ><img src='https://img.icons8.com/?size=35&id=120859&format=png&color=FFFFFF' className='mr-2' alt='User File'/>Data User</button>
           <button
             className={`items-center flex flex-row p-2 rounded-md text-left font-bold transition duration-150 ease-in-out ${showContent === 'map' ? 'bg-darkBlue text-white' : 'hover:bg-blueA'}`}
-            onClick={() => setShowContent('map')}><img src='https://img.icons8.com/?size=35&id=85961&format=png&color=FFFFFF' className='mr-2' alt='Maps'/>Map</button>
+            onClick={() => setShowContent('map')}><img src='https://img.icons8.com/?size=35&id=85961&format=png&color=FFFFFF' className='mr-2' alt='Maps'/>Maps</button>
         </nav>
         <div>
           <button

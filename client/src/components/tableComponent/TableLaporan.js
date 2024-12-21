@@ -70,12 +70,12 @@ const TableLaporan = () => {
       <table className="items-center table-auto w-full text-sm text-gray-500 divide-y divide-darkCharcoal">
         <thead className="text-xs text-left text-gray-700 uppercase">
           <tr>
-            <th className="px-4 py-3">Username</th>
-            <th className="px-4 py-3">Email Address</th>
+            <th className="px-4 py-3">Nama Lengkap</th>
+            <th className="px-4 py-3">Email</th>
             <th className="px-4 py-3">Latitude</th>
             <th className="px-4 py-3">Longitude</th>
-            <th className="px-4 py-3">Description</th>
-            <th className="px-4 py-3 text-center">Picture</th>
+            <th className="px-4 py-3">Deskripsi</th>
+            <th className="px-4 py-3 text-center">Gambar</th>
             <th className="px-4 py-3">
               <select className="ml-4 border-none bg-transparent border-gray-700 text-gray-700 uppercase text-center justify-center items-center" onChange={sortByStatusHandle} name="filter">
                 <option value="Status">Status</option>
@@ -84,7 +84,7 @@ const TableLaporan = () => {
                 <option value="Ditolak">Ditolak</option>
               </select>
             </th>
-            <th className="px-4 py-3 text-center">Action</th>
+            <th className="px-4 py-3 text-center">Aksi</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-darkCharcoal">

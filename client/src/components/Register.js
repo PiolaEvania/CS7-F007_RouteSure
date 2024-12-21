@@ -53,22 +53,26 @@ const Register = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-darkCharcoal px-6 py-12 lg:px-8">
       <div className="w-full max-w-lg bg-white rounded shadow-md p-6">
-        <h1 className="text-center text-2xl font-bold text-gray-900">Register</h1>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          Create an account to access all features
+        <img className=' h-12 justify-center mx-auto'
+          src="https://i.imgur.com/BxlYJgi.png" 
+          alt="Logo RouteSure" 
+        />
+        <h1 className="text-center text-2xl font-bold text-gray-900">Daftar</h1>
+        <p className="text-center text-sm text-gray-600">
+          Buat akun untuk membuka semua fitur
         </p>
         <form method="POST" className="mt-6 space-y-4">
           {/* Email Field */}
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-900">
-              Email Address
+              Email
             </label>
             <div className="relative mt-2">
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Enter your email"
+                placeholder="Masukkan email"
                 required
                 className="block w-full rounded-md bg-gray-100 px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                 onChange={(e) => setUserData((prevState) => ({ ...prevState, email: e.target.value }))}
@@ -90,7 +94,7 @@ const Register = () => {
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Enter your username"
+                placeholder="Masukkan username"
                 required
                 className="block w-full rounded-md bg-gray-100 px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                 onChange={(e) => setUserData((prevState) => ({ ...prevState, name: e.target.value }))}
@@ -112,7 +116,7 @@ const Register = () => {
                 name="password"
                 id="password"
                 type={showPassword ? 'text' : 'password'}
-                placeholder="Enter your password"
+                placeholder="Masukkan password"
                 required
                 className="block w-full rounded-md bg-gray-100 px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                 onChange={(e) => setUserData((prevState) => ({ ...prevState, password: e.target.value }))}
@@ -130,14 +134,14 @@ const Register = () => {
           {/* Confirm Password Field */}
           <div>
             <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-900">
-              Confirm Password
+              Konfirmasi Password
             </label>
             <div className="relative mt-2">
               <input
                 type={showConfirmPassword ? 'text' : 'password'}
                 name="confirmPassword"
                 id="confirmPassword"
-                placeholder="Confirm your password"
+                placeholder="Masukkan konfirmasi password"
                 required
                 className="block w-full rounded-md bg-gray-100 px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                 onChange={(e) => setUserData((prevState) => ({ ...prevState, confirmPassword: e.target.value }))}
@@ -154,9 +158,9 @@ const Register = () => {
           </div>
           {/* Login Redirect */}
           <p className="mt-2 text-center text-sm text-gray-500">
-            Already have an account?{' '}
+            Sudah memiliki akun?{' '}
             <a href="/login" className="font-semibold text-indigo-600 hover:text-indigo-500">
-              Login
+              Masuk
             </a>
           </p>
           {/* Submit Button */}
@@ -171,7 +175,7 @@ const Register = () => {
                 className="mr-2"
                 alt="Register"
               />
-              Register
+              Daftar
             </button>
           </div>
         </form>

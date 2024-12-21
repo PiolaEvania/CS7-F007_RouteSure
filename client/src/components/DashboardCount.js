@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const DashboardCount = () => {
   const [userCount, setUserCount] = useState(0);
@@ -8,6 +10,10 @@ const DashboardCount = () => {
   const [laporanProsesCount, setLaporanProsesCount] = useState(0);
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000, // Durasi animasi dalam milidetik
+      // Apakah animasi hanya dijalankan sekali
+    });
     const fetchData = () => {
       // Fetch total users
       axios
@@ -50,9 +56,10 @@ const DashboardCount = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 py-4">
+    <div data-aos="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 py-4">
       {/* Card for Total User */}
       <div
+        data-aos="flip-left"
         className="p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
         style={{
           backgroundImage: 'linear-gradient(to bottom right, #BBDEFB, #1565C0)',
@@ -69,6 +76,7 @@ const DashboardCount = () => {
 
       {/* Card for Total Laporan */}
       <div
+        data-aos="flip-left"
         className="p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
         style={{
           backgroundImage: 'linear-gradient(to bottom right, #FEF3C7, #F59E0B)',
@@ -85,6 +93,7 @@ const DashboardCount = () => {
 
       {/* Card for Laporan dalam Proses */}
       <div
+        data-aos="flip-left"
         className="p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
         style={{
           backgroundImage: 'linear-gradient(to bottom right, #FFE8D6, #D97706)',
@@ -103,6 +112,7 @@ const DashboardCount = () => {
 
       {/* Card for Laporan Selesai */}
       <div
+        data-aos="flip-left"
         className="p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
         style={{
           backgroundImage: 'linear-gradient(to bottom right, #E8F5E9, #4CAF50)',
