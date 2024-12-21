@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
 const TableUser = () => {
   const [DataUser, setDataUser] = useState([]);
   useEffect(() => {
@@ -19,13 +18,14 @@ const TableUser = () => {
         console.log(err);
       });
   }, []);
+
   return (
     <div className='px-5 bg-white'>
       <table className="table-auto w-full text-sm text-left text-gray-500 divide-y divide-darkCharcoal">
         <thead>
           <tr>
-            <th className="px-6 py-3 text-left text-xs text-gray-700 uppercase tracking-wider">Full Name</th>
-            <th className="px-6 py-3 text-left text-xs text-gray-700 uppercase tracking-wider">Email Address</th>
+            <th className="px-6 py-3 text-left text-xs text-gray-700 uppercase tracking-wider">Username</th>
+            <th className="px-6 py-3 text-left text-xs text-gray-700 uppercase tracking-wider">Email</th>
             <th className="px-6 py-3 text-left text-xs text-gray-700 uppercase tracking-wider">Role</th>
             <th className="px-6 py-3 text-left text-xs text-gray-700 uppercase tracking-wider">Status</th>
           </tr>
@@ -36,7 +36,7 @@ const TableUser = () => {
             <td className="px-6 py-4 whitespace-nowrap">{user.email}</td>
             <td className="px-6 py-4 whitespace-nowrap">{user.role === '671b672b3981db347cfd7832' ? 'admin' : 'user'}</td>
             <td className="px-6 py-4 whitespace-nowrap">
-              <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-200 text-green-400">Active</span>
+              <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-200 text-green-400">Aktif</span>
             </td>
           </tr>
         ))}

@@ -28,14 +28,15 @@ const Dashboard = () => {
         confirmButtonColor: '#d33',
         cancelButtonColor: '#3085d6',
         confirmButtonText: 'Log Out',
-        cancelButtonText: 'Cancel',
+        cancelButtonText: 'Batal',
       }).then((result) => {
         if (result.isConfirmed) {
           const removeUser = localStorage.removeItem('user');
           Cookies.remove('jwt');
           axios.post('http://localhost:5000/api/logout', removeUser, { withCredentials: true })
             .then(() => {
-              toast.success('Logout berhasil.');
+              console.log('Log Out Berhasil');
+              toast.success('Anda telah Log Out');
               navigate('/login');
             })
             .catch((error) => {
@@ -61,7 +62,7 @@ const Dashboard = () => {
           ><img src='https://img.icons8.com/?size=35&id=120859&format=png&color=FFFFFF' className='mr-2' alt='User File'/>Data User</button>
           <button
             className={`items-center flex flex-row p-2 rounded-md text-left font-bold transition duration-150 ease-in-out ${showContent === 'map' ? 'bg-darkBlue text-white' : 'hover:bg-blueA'}`}
-            onClick={() => setShowContent('map')}><img src='https://img.icons8.com/?size=35&id=85961&format=png&color=FFFFFF' className='mr-2' alt='Maps'/>Map</button>
+            onClick={() => setShowContent('map')}><img src='https://img.icons8.com/?size=35&id=85961&format=png&color=FFFFFF' className='mr-2' alt='Maps'/>Maps</button>
         </nav>
         <div>
           <button

@@ -12,8 +12,9 @@ const TableLaporan = () => {
     axios.get('http://localhost:5000/api/laporan', { withCredentials: true })
       .then((response) => {
         if (Array.isArray(response.data.data)) {
-          setLaporanUser(response.data.data);
-          setFilteredLaporan(response.data.data); // Initialize filteredLaporan with all data
+          const sortedData = response.data.data.sort((a, b) => new Date(b.updatedAt || b.createdAt) - new Date(a.updatedAt || a.createdAt));
+          setLaporanUser(sortedData);
+          setFilteredLaporan(sortedData);
         } else {
           console.error('API response is not an array:', response.data);
         }
@@ -26,7 +27,7 @@ const TableLaporan = () => {
   const deleteLaporanHandler = (e) => {
     const getId = e.currentTarget.getAttribute('data-id');
     if (!getId) {
-      toast.error('Invalid ID. Unable to delete laporan.');
+      toast.error('ID Invalid. Tidak bisa menghapus laporan');
       return;
     }
 
@@ -37,18 +38,19 @@ const TableLaporan = () => {
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Delete',
-      cancelButtonText: 'Cancel',
+      confirmButtonText: 'Hapus',
+      cancelButtonText: 'Batal',
     }).then((result) => {
       if (result.isConfirmed) {
         axios.delete(`http://localhost:5000/api/laporan/${getId}`, { withCredentials: true })
           .then(() => {
+            console.log(`data-id: ${ getId } berhasil dihapus`);
             toast.success('Data Laporan berhasil dihapus');
             setLaporanUser(laporanUser.filter((laporan) => laporan._id !== getId));
             setFilteredLaporan(filteredLaporan.filter((laporan) => laporan._id !== getId));
           })
           .catch((error) => {
-            toast.error('Kesalahan Server. Coba lagi nanti.');
+            toast.error('Terjadi kesalahan pada server');
             console.error('Delete failed:', error);
           });
       }
@@ -70,12 +72,12 @@ const TableLaporan = () => {
       <table className="items-center table-auto w-full text-sm text-gray-500 divide-y divide-darkCharcoal">
         <thead className="text-xs text-left text-gray-700 uppercase">
           <tr>
-            <th className="px-4 py-3">Username</th>
-            <th className="px-4 py-3">Email Address</th>
+            <th className="px-4 py-3">Nama Lengkap</th>
+            <th className="px-4 py-3">Email</th>
             <th className="px-4 py-3">Latitude</th>
             <th className="px-4 py-3">Longitude</th>
-            <th className="px-4 py-3">Description</th>
-            <th className="px-4 py-3 text-center">Picture</th>
+            <th className="px-4 py-3">Deskripsi</th>
+            <th className="px-4 py-3 text-center">Gambar</th>
             <th className="px-4 py-3">
               <select className="ml-4 border-none bg-transparent border-gray-700 text-gray-700 uppercase text-center justify-center items-center" onChange={sortByStatusHandle} name="filter">
                 <option value="Status">Status</option>
@@ -84,7 +86,7 @@ const TableLaporan = () => {
                 <option value="Ditolak">Ditolak</option>
               </select>
             </th>
-            <th className="px-4 py-3 text-center">Action</th>
+            <th className="px-4 py-3 text-center">Aksi</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-darkCharcoal">

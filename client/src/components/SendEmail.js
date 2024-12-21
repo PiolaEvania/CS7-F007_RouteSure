@@ -35,7 +35,7 @@ const SendEmail = () => {
         : laporanUser?.detailLaporan?.status === 'Ditolak' ? 'template_dc55h3n' : null;
 
     if (!templateId) {
-      toast.error('Template email tidak ditemukan untuk status laporan ini.');
+      toast.error('Template email tidak ditemukan untuk status laporan ini');
       return;
     }
 
@@ -50,11 +50,11 @@ const SendEmail = () => {
       .send('service_qq81thb', templateId, templateParams, '0mgCiwlEqfhvm9Nln')
       .then(
         () => {
-          console.log('SUCCESS!');
-          toast.success('Status laporan berhasil dikirim ke User.');
+          console.log('Status laporan berhasil dikirim');
+          toast.success('Status laporan berhasil dikirim ke User');
         },
         (error) => {
-          console.log('FAILED...', error);
+          console.log('Terjadi kesalahan pada server', error);
           toast.error(error.text);
         }
       );
@@ -72,15 +72,15 @@ const SendEmail = () => {
             <form className="mt-2" ref={form} encType="multipart/form-data" onSubmit={sendEmailHandler}>
               <div className="space-y-4">
                 <div>
-                  <label className="text-base font-medium text-darkCharcoal">Username</label>
+                  <label className="text-base font-medium text-darkCharcoal">Nama Lengkap</label>
                   <input type="text" className="mt-2 flex h-10 w-full rounded-md border border-darkCharcoal bg-transparent px-3 py-2 text-sm text-darkCharcoal" name="name" disabled value={laporanUser?.detailLaporan?.name || ''}/>
                 </div>
                 <div>
-                  <label className="text-base font-medium text-darkCharcoal">Email Address</label>
+                  <label className="text-base font-medium text-darkCharcoal">Email</label>
                   <input type="email" className="mt-2 flex h-10 w-full rounded-md border border-darkCharcoal bg-transparent px-3 py-2 text-sm text-darkCharcoal" name="email" disabled value={laporanUser?.detailLaporan?.email || ''}/>
                 </div>
                 <div>
-                  <label className="text-base font-medium text-darkCharcoal">Description</label>
+                  <label className="text-base font-medium text-darkCharcoal">Deskripsi</label>
                   <input type="text" className="mt-2 flex h-10 w-full rounded-md border border-darkCharcoal bg-transparent px-3 py-2 text-sm  text-darkCharcoal" name="deskripsi" disabled value={laporanUser?.detailLaporan?.deskripsi || ''}/>
                 </div>
                 <div>
@@ -92,7 +92,7 @@ const SendEmail = () => {
                   <input type="number" className="mt-2 flex h-10 w-full rounded-md border border-darkCharcoal bg-transparent px-3 py-2 text-sm text-darkCharcoal" name="longitude" disabled value={laporanUser?.detailLaporan?.position?.longitude || ''}/>
                 </div>
                 <div>
-                  <label className="text-base font-medium text-darkCharcoal">Picture</label>
+                  <label className="text-base font-medium text-darkCharcoal">Gambar</label>
                   <img className='mt-2 rounded-md' src={laporanUser?.detailLaporan?.image || ''} alt='' />
                 </div>
                 <div>
