@@ -1,4 +1,4 @@
-# RouteSûre
+# RouteSure
 
 RouteSure adalah platform berbasis web yang dirancang untuk memudahkan masyarakat dalam melaporkan masalah pada infrastruktur publik. Aplikasi ini bertujuan untuk menjadi sarana yang cepat, efisien, dan dapat diandalkan untuk meningkatkan respons dan perbaikan terhadap kondisi infrastruktur yang bermasalah.<br>
 
