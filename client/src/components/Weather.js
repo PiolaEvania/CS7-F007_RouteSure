@@ -41,7 +41,7 @@ const Weather = () => {
   const weatherIcon = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
 
   return (
-    <div className="flex items-center space-x-4 text-white flex-wrap">
+    <div className="flex items-center space-x-4 bg-black bg-opacity-50 rounded-bl pr-4 py-2 text-white flex-wrap">
       <img
         src={weatherIcon}
         alt={weather[0].description}
