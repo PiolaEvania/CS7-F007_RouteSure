@@ -38,22 +38,32 @@ const MapComponent = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {laporanUser.map((marker, index) => (
-          <Marker
-            key={index}
-            position={[marker.position.latitude, marker.position.longitude]}
-          >
-            <Popup>
-              {`Deskripsi Kerusakan : ${marker.deskripsi}`}
-              <br />
-              {`Status Laporan : ${marker.status}`}
-              <br />
-              {`Latitude : ${marker.position.latitude}`}
-              <br />
-              {`Longitude : ${marker.position.longitude}`}
-            </Popup>
-          </Marker>
-        ))}
+        {laporanUser.map((marker, index) => {
+          const latitude = marker.position?.latitude;
+          const longitude = marker.position?.longitude;
+
+          if (latitude == null || longitude == null) {
+            console.warn(`Skipping marker at index ${index} due to invalid position:`, marker);
+            return null; // Skip rendering invalid marker
+          }
+
+          return (
+            <Marker
+              key={index}
+              position={[latitude, longitude]}
+            >
+              <Popup>
+                {`Deskripsi Kerusakan : ${marker.deskripsi}`}
+                <br />
+                {`Status Laporan : ${marker.status}`}
+                <br />
+                {`Latitude : ${latitude}`}
+                <br />
+                {`Longitude : ${longitude}`}
+              </Popup>
+            </Marker>
+          );
+        })}
       </MapContainer>
     </div>
   );

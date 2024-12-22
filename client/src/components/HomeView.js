@@ -37,6 +37,12 @@ const HomeView = () => {
     return classes.filter(Boolean).join(' ');
   }
 
+  const navigation = [
+    { name: 'Laporan', href: '#form', current: false },
+    { name: 'Layanan', href: '#dashboard', current: false },
+    { name: 'Tentang Kami', href: '#about', current: false },
+  ];
+
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
@@ -123,12 +129,6 @@ const HomeView = () => {
     });
   };
 
-  const navigation = [
-    { name: 'Laporan', href: '#form', current: false },
-    { name: 'Layanan', href: '#dashboard', current: false },
-    { name: 'Tentang Kami', href: '#about', current: false },
-  ];
-
   return (
     <div>
       {/* Navbar */}
@@ -186,20 +186,20 @@ const HomeView = () => {
                 </div>
                 <MenuItems
                   transition
-                  className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+                  className="absolute py-4 z-10 mt-[19px] right-[-17px] md:right-[-24px] lg:right-[-33px] xl:right-0 xl:rounded-br-md w-48 origin-top-right rounded-bl-md bg-gray-800 shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
                 >
                   {userRole === '671b672b3981db347cfd7832' && (
                     <MenuItem>
                       <a
                         href="/dashboard"
-                        className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-blue-500 data-[focus]:text-white data-[focus]:outline-none">
+                        className="block px-4 py-2 text-sm text-gray-300 data-[focus]:bg-blue-500 data-[focus]:mx-2 data-[focus]:rounded-md data-[focus]:text-white data-[focus]:outline-none">
                     Dashboard
                       </a>
                     </MenuItem>
                   )}
                   <MenuItem>
                     <button
-                      className="block px-4 py-2 h-full w-full text-left text-sm text-gray-700 data-[focus]:bg-red-500 data-[focus]:text-white data-[focus]:outline-none"
+                      className="block w-[176px] px-4 py-2 text-left text-sm text-gray-300 data-[focus]:bg-red-500 data-[focus]:mx-2 data-[focus]:rounded-md data-[focus]:text-white data-[focus]:outline-none"
                       onClick={handleLogoutButton}
                     >
                     Keluar
@@ -257,7 +257,7 @@ const HomeView = () => {
             </button>
           )}
 
-          <div className='absolute z-[10] top-[431px] ml-[-183px] md:top-[403px] md:ml-[-486px] lg:top-[403px] lg:ml-[-687px] xl:top-[403px] xl:ml-[0]'>
+          <div className='absolute z-[10] top-[431px] ml-[-182px] md:top-[403px] md:ml-[-486px] lg:top-[403px] lg:ml-[-687px] xl:top-[403px] xl:ml-[0]'>
             <Weather />
           </div>
 
@@ -324,8 +324,8 @@ const HomeView = () => {
                       <button
                         className="inline-flex w-full items-center justify-center border-black border-2 rounded-md bg-darkCharcoal px-3.5 py-2.5 font-bold leading-7 text-white hover:bg-slate-900 transition duration-150 ease-in-out hover:text-white"
                         type="submit"
-                        onClick={submitDataLaporan}><img src='https:img.icons8.com/?size=35&id=85971&format=png&color=FFFFFF' alt='Kirim' className='mr-2'/>
-                        Submit
+                        onClick={submitDataLaporan}><img src='https://img.icons8.com/?size=35&id=85971&format=png&color=FFFFFF' alt='Kirim' className='mr-2'/>
+                        Kirim
                       </button>
                     </div>
                   </div>
