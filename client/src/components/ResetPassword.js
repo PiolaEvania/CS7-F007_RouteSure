@@ -35,8 +35,8 @@ const ResetPassword = () => {
     <div className="flex min-h-screen items-center justify-center bg-darkCharcoal px-6 py-12 lg:px-8">
       <div className="w-full max-w-md bg-white rounded shadow-md p-6">
         <img className=' h-12 justify-center mx-auto'
-          src="https://i.imgur.com/BxlYJgi.png" 
-          alt="Logo RouteSure" 
+          src="https://i.imgur.com/BxlYJgi.png"
+          alt="Logo RouteSure"
         />
         <h1 className="text-center text-2xl font-bold text-gray-900">Reset Password</h1>
         <p className="text-center text-sm text-gray-600">
