@@ -54,8 +54,8 @@ const Login = ({ setUser }) => {
     <div className="flex min-h-screen items-center justify-center bg-darkCharcoal py-50 px-6 py-12 lg:px-8">
       <div className="w-full max-w-sm sm:mx-auto bg-white rounded-lg border border-gray-200 p-6">
         <img className=' h-12 justify-center mx-auto'
-          src="https://i.imgur.com/BxlYJgi.png" 
-          alt="Logo RouteSure" 
+          src="https://i.imgur.com/BxlYJgi.png"
+          alt="Logo RouteSure"
         />
         <h1 className="text-center text-2xl font-bold tracking-tight text-gray-900">
           Selamat Datang

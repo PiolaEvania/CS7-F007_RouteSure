@@ -29,7 +29,7 @@ const Register = () => {
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(userData.email)) {
+    if (!emailRegex.test(userData.email)) {
       toast.warn('Format email harus example@gmail.com!', toastUtil);
       return;
     }
@@ -64,8 +64,8 @@ const Register = () => {
     <div className="flex min-h-screen items-center justify-center bg-darkCharcoal px-6 py-12 lg:px-8">
       <div className="w-full max-w-lg bg-white rounded shadow-md p-6">
         <img className=' h-12 justify-center mx-auto'
-          src="https://i.imgur.com/BxlYJgi.png" 
-          alt="Logo RouteSure" 
+          src="https://i.imgur.com/BxlYJgi.png"
+          alt="Logo RouteSure"
         />
         <h1 className="text-center text-2xl font-bold text-gray-900">Daftar</h1>
         <p className="text-center text-sm text-gray-600">

@@ -11,8 +11,8 @@ import Swal from 'sweetalert2';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Content from './Content';
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Team from './Team';
 
 const HomeView = () => {
@@ -34,7 +34,7 @@ const HomeView = () => {
   };
 
   function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+    return classes.filter(Boolean).join(' ');
   }
 
   useEffect(() => {
@@ -127,7 +127,7 @@ const HomeView = () => {
     { name: 'Laporan', href: '#form', current: false },
     { name: 'Layanan', href: '#dashboard', current: false },
     { name: 'Tentang Kami', href: '#about', current: false },
-  ]
+  ];
 
   return (
     <div>
@@ -147,8 +147,8 @@ const HomeView = () => {
             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex shrink-0 items-center">
                 <img className='h-11 w-auto'
-                  src="https://i.imgur.com/riEnqhq.png" 
-                  alt="Logo RouteSure" 
+                  src="https://i.imgur.com/riEnqhq.png"
+                  alt="Logo RouteSure"
                 />
               </div>
               <div className="hidden sm:ml-6 sm:block md:m-auto lg:m-auto">
@@ -171,81 +171,81 @@ const HomeView = () => {
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
-            {/* Profile dropdown */}
-            <Menu as="div" className="relative ml-3">
-              <div>
-                <MenuButton className="relative flex bg-gray-800 text-sm rounded-md p-1 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">Open user menu</span>
-                  <img
-                    src="https://img.icons8.com/?size=50&id=YIZ59MTJsuUz&format=png&color=ffffff"
-                    className=""
-                    alt="Dashboard"
-                  />
-                </MenuButton>
-              </div>
-              <MenuItems
-                transition
-                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
-              >
-                {userRole === '671b672b3981db347cfd7832' && (
-                  <MenuItem>
-                    <a
-                    href="/dashboard"
-                    className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-blue-500 data-[focus]:text-white data-[focus]:outline-none">
+              {/* Profile dropdown */}
+              <Menu as="div" className="relative ml-3">
+                <div>
+                  <MenuButton className="relative flex bg-gray-800 text-sm rounded-md p-1 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                    <span className="absolute -inset-1.5" />
+                    <span className="sr-only">Open user menu</span>
+                    <img
+                      src="https://img.icons8.com/?size=50&id=YIZ59MTJsuUz&format=png&color=ffffff"
+                      className=""
+                      alt="Dashboard"
+                    />
+                  </MenuButton>
+                </div>
+                <MenuItems
+                  transition
+                  className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+                >
+                  {userRole === '671b672b3981db347cfd7832' && (
+                    <MenuItem>
+                      <a
+                        href="/dashboard"
+                        className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-blue-500 data-[focus]:text-white data-[focus]:outline-none">
                     Dashboard
-                    </a>
-                  </MenuItem>
-                )}
-                <MenuItem>
-                  <button
-                    className="block px-4 py-2 h-full w-full text-left text-sm text-gray-700 data-[focus]:bg-red-500 data-[focus]:text-white data-[focus]:outline-none"
-                    onClick={handleLogoutButton}
-                  >
+                      </a>
+                    </MenuItem>
+                  )}
+                  <MenuItem>
+                    <button
+                      className="block px-4 py-2 h-full w-full text-left text-sm text-gray-700 data-[focus]:bg-red-500 data-[focus]:text-white data-[focus]:outline-none"
+                      onClick={handleLogoutButton}
+                    >
                     Keluar
-                  </button>
-                </MenuItem>
-              </MenuItems>
-            </Menu>
+                    </button>
+                  </MenuItem>
+                </MenuItems>
+              </Menu>
+            </div>
           </div>
         </div>
+
+        <DisclosurePanel className="sm:hidden">
+          <div className="space-y-1 px-2 pb-3 pt-2">
+            {navigation.map((item) => (
+              <DisclosureButton
+                key={item.name}
+                as="a"
+                href={item.href}
+                aria-current={item.current ? 'page' : undefined}
+                className={classNames(
+                  item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                  'block rounded-md px-3 py-2 text-base font-medium',
+                )}
+              >
+                {item.name}
+              </DisclosureButton>
+            ))}
+          </div>
+        </DisclosurePanel>
+      </Disclosure>
+
+      {/* Hero */}
+      <div className='bg-gray-800 bg-opacity-90'>
+        <Content />
       </div>
 
-      <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pb-3 pt-2">
-          {navigation.map((item) => (
-            <DisclosureButton
-              key={item.name}
-              as="a"
-              href={item.href}
-              aria-current={item.current ? 'page' : undefined}
-              className={classNames(
-                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                'block rounded-md px-3 py-2 text-base font-medium',
-              )}
-            >
-              {item.name}
-            </DisclosureButton>
-          ))}
+      {/* Main */}
+      <div onClick={handleOutsideClick}>
+        <div>
+          <About />
         </div>
-      </DisclosurePanel>
-    </Disclosure>
 
-    {/* Hero */}
-    <div className='bg-gray-800 bg-opacity-90'>
-      <Content />
-    </div>
-
-    {/* Main */}
-    <div onClick={handleOutsideClick}>
-      <div>
-        <About />
-      </div>
-      
-      {/* Maps */}
-      <div
-      className="relative flex flex-col my-4 justify-center items-center sm:flex-col md:justify-center md:items-center md:flex-col md:my-6 lg:flex-col xl:flex-row xl:mx-4 xl:justify-start xl:items-start">
-        {showButton && (
+        {/* Maps */}
+        <div
+          className="relative flex flex-col my-4 justify-center items-center sm:flex-col md:justify-center md:items-center md:flex-col md:my-6 lg:flex-col xl:flex-row xl:mx-4 xl:justify-start xl:items-start">
+          {showButton && (
             <button
               className="absolute h-[500px] bg-black bg-opacity-50 rounded-md text-white font-bold drop-shadow-lg text-xl flex justify-center items-center mb-4 z-10 top-[-1px] w-[350px] md:w-[700px] lg:w-[900px] xl:w-[800px] xl:mr-2"
               onClick={(e) => {
@@ -350,7 +350,7 @@ const HomeView = () => {
           <h1 className="flex-1 text-white text-xs md:text-lg text-center font-semibold">©2024 - RouteSure, All rights reserved</h1>
         </footer>
       </div>
-      
+
     </div>
   );
 };
